@@ -82,6 +82,10 @@ $(document).ready(function(e) {
     $('.copyright').html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i> Lete乐特');
 });
 
+/*icon动态图标*/
+$(".card-info-social-icons").append(
+    '<a class="social-icon" href="https://space.bilibili.com/101706302" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-bilibili"></use></svg></a>'
+);
 
 
 
