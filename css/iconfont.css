@@ -13,12 +13,3 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-gonggao:before {
-  content: "\f5d5";
-  font-size: 24px;
-}
-
-.icon-icon-bilibili:before {
-  content: "\e600";
-  font-size: 19px;
-}
