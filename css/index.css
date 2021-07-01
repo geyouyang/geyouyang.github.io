@@ -1687,7 +1687,7 @@ blockquote footer cite:before {
 }
 #article-container pre,
 #article-container code {
-  font-size: 18px;
+  font-size: var(--global-font-size);
   font-family: sleek !important;
 }
 #article-container code {
@@ -1715,7 +1715,7 @@ blockquote footer cite:before {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 0.3rem 0 0.1rem 0.7rem;
-  font-size: 18px;
+  font-size: var(--global-font-size);
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1747,7 +1747,7 @@ blockquote footer cite:before {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: 18px;
+  font-size: var(--global-font-size);
 }
 #article-container .highlight-tools.closed + table {
   display: none;
