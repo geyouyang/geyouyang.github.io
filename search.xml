@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>Markdown常用语法</title>
+      <link href="/2021/07/01/p/"/>
+      <url>/2021/07/01/p/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 写作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Html学习笔记(01)</title>
       <link href="/2021/06/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2021/06/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="HTML语言简述"><a href="#HTML语言简述" class="headerlink" title="HTML语言简述:"></a>HTML语言简述:</h1><p><strong>HTML，全称“Hyper Text Markup Language（超文本标记语言),HTML是一种非常容易入门制作网页描述性语言</strong></p><h2 id="HTML基本结构"><a href="#HTML基本结构" class="headerlink" title="HTML基本结构"></a>HTML基本结构</h2><hr><h1 id="HTML三大基本标签"><a href="#HTML三大基本标签" class="headerlink" title="HTML三大基本标签:"></a>HTML三大基本标签:</h1><h2 id="1-HTML标签"><a href="#1-HTML标签" class="headerlink" title="(1)HTML标签"></a>(1)HTML标签</h2><p><strong>从<html>开始到</html>结束</strong></p><h2 id="2-head标签"><a href="#2-head标签" class="headerlink" title="(2)head标签"></a>(2)head标签</h2><p>** head标签代表头部标签,往往定义一些特殊内容,通常浏览器内不可见 **</p><h3 id="内部标签-head内部标签非常重要且常用"><a href="#内部标签-head内部标签非常重要且常用" class="headerlink" title="内部标签 (head内部标签非常重要且常用)"></a><head>内部标签 (head内部标签非常重要且常用)</h3><ul><li> <strong><head>内部标签                        说明</strong></li><li>   <meta>                                定义网站的基本信息(供搜索引擎)</li><li>   <title>                               定义网站的标题</li><li>   <style>                               定义CSS样式</li><li>   <link>                                连接外部CSS文件或脚本信息</li><li>   <script>                              定义脚本语言</li><li>   <base>                                定义页面链接基础定位(不常用) </li></ul><h2 id="3-body标签"><a href="#3-body标签" class="headerlink" title="(3)body标签"></a>(3)body标签</h2><p>body标签定义网页展示内容,这些内容往往都是”可见内容”(浏览器可见)</p><p><strong>body标签超级重要</strong></p>]]></content>
       
       
       <categories>
