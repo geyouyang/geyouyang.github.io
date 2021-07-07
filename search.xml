@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>计算机编程导论(编程语言)</title>
+      <link href="/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/"/>
+      <url>/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul><li>能够说出什么是编程语言</li><li>能够区分编程语言和标记语言的不同</li><li>能够说出常见的数据存储单位及其换算关系</li><li>能够说出内存的主要作用及其特点</li></ul><h2 id="主要知识点"><a href="#主要知识点" class="headerlink" title="主要知识点"></a>主要知识点</h2><ul><li>编程语言</li><li>计算机基础</li></ul><h2 id="1-1编程"><a href="#1-1编程" class="headerlink" title="1.1编程"></a>1.1编程</h2><p><em>编程：</em>就是让计算机解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。<br><em>计算机程序：</em>就是计算机所执行的一系列的<em>指令集合</em>，而程序全部都是用我们所掌控的语言来编写的，所以人们要控制<br>计算机一定要通过计算机语言向计算机发出指令。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机 编程 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Markdown常用语法</title>
       <link href="/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
       <url>/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-6级标题"><a href="#1-6级标题" class="headerlink" title="1~6级标题"></a>1~6级标题</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#一级标题</span></span><br><span class="line"><span class="section">##二级标题</span></span><br><span class="line"><span class="section">###三级标题</span></span><br><span class="line"><span class="section">####四级标题</span></span><br><span class="line"><span class="section">#####五级标题</span></span><br><span class="line"><span class="section">######六级标题</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="一-1-6级标题"><a href="#一-1-6级标题" class="headerlink" title="(一) 1~6级标题"></a>(一) 1~6级标题</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/# 一级标题</span><br><span class="line">/## 二级标题</span><br><span class="line">/### 三级标题</span><br><span class="line">/#### 四级标题</span><br><span class="line">/##### 五级标题</span><br><span class="line">/###### 六级标题</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>效果如下:</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h1 id="二-、字体"><a href="#二-、字体" class="headerlink" title="(二)、字体"></a>(二)、字体</h1><ul><li>加粗<br>要加粗的文字左右两边分别用两个*包起来</li></ul><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">语法:无序列表用-<span class="emphasis">*+任何一种都可以</span></span><br><span class="line"><span class="emphasis">- 列表内容</span></span><br><span class="line"><span class="emphasis">+ 列表内容</span></span><br><span class="line"><span class="emphasis">*</span> 列表内容</span><br><span class="line"></span><br><span class="line">注意: - + <span class="emphasis">* 跟内容之间都要有一个空格</span></span><br><span class="line"><span class="emphasis"></span></span><br></pre></td></tr></table></figure><p>效果如下:</p><ul><li>列表内容</li></ul><ul><li>列表内容</li></ul><ul><li>列表内容</li></ul><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">语法:数字加点,注意序号和内容之间的空格</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 列表内容</span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -58,7 +83,7 @@
       <link href="/2021/06/21/CSS%E5%9F%BA%E7%A1%80/"/>
       <url>/2021/06/21/CSS%E5%9F%BA%E7%A1%80/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="一、CSS是什么？"><a href="#一、CSS是什么？" class="headerlink" title="一、CSS是什么？"></a>一、CSS是什么？</h1><p>css (Cascading Style sheets),术语叫做<em>层叠样式表</em></p>]]></content>
       
       
       <categories>
