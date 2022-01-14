@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>C语言学习笔记</title>
-      <link href="/2021/08/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/"/>
-      <url>/2021/08/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/</url>
-      
-        <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul><li>能够说出什么是编程语言</li><li>能够区分编程语言和标记语言的不同</li><li>能够说出常见的数据存储单位及其换算关系</li><li>能够说出内存的主要作用及其特点</li></ul><h2 id="主要知识点"><a href="#主要知识点" class="headerlink" title="主要知识点"></a>主要知识点</h2><ul><li>编程语言</li><li>计算机基础</li></ul><h2 id="1-1编程"><a href="#1-1编程" class="headerlink" title="1.1编程"></a>1.1编程</h2><p><em>编程：</em>就是让计算机解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。<br><em>计算机程序：</em>就是计算机所执行的一系列的<em>指令集合</em>，而程序全部都是用我们所掌控的语言来编写的，所以人们要控制<br>计算机一定要通过计算机语言向计算机发出指令。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 计算机/编程/基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Javascript</title>
       <link href="/2021/07/08/javascript/"/>
       <url>/2021/07/08/javascript/</url>
@@ -54,11 +29,11 @@
     
     
     <entry>
-      <title>C语言学习笔记</title>
-      <link href="/2021/07/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-      <url>/2021/07/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      <title>计算机编程导论(编程语言)</title>
+      <link href="/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/"/>
+      <url>/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/</url>
       
-        <content type="html"><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="什么是数据类型"><a href="#什么是数据类型" class="headerlink" title="什么是数据类型"></a>什么是数据类型</h2><pre><code>基本类型数据    整数        整型        -- int          --4        短整型      -- short int    --2        长整型      -- long int     --8    浮点数[实数]        单精度浮点数 -- float   --4        双精度浮点数 -- double  --8    字符        char                   --1复合类型数据    结构体    枚举    共用体</code></pre><h2 id="变量为什么要初始化-重点"><a href="#变量为什么要初始化-重点" class="headerlink" title="变量为什么要初始化?(重点)"></a>变量为什么要初始化?(重点)</h2><p>变量的本质就是内存中一段存储空间<br>初始化就是赋值的意思</p><p>因为一个软件所分配的空间中极可能存在以前其他软件使用过后的残留数据,这些数据被称之为垃圾数据<br>所以通常情况下我们为一个变量,为一个数组,分配好存储空间之后都要对该内存空间初始化</p><h2 id="如何定义变量"><a href="#如何定义变量" class="headerlink" title="如何定义变量"></a>如何定义变量</h2><pre><code>    数据类型    变量名 = 要赋的值;等价于    数据类型    变量名;    变量名 = 要赋的值;例如:    int i = 3;            等价于 int i; i = 3;    int i, j;             等价于 int i; int j;    int i, j=3;           等价于 int i; int j; j = 3;    int i = 3, j = 5;     等价于 int i; int j; i = 3; j = 5;    int i, j ; i = j = 5; 等价于 int i, j; i = 5; j = 5;</code></pre><h2 id="什么是进制"><a href="#什么是进制" class="headerlink" title="什么是进制?"></a>什么是进制?</h2><pre><code>十进制逢十进一    例:0123456789二进制逢二进一    例:00101000n进制逢n进一</code></pre><h2 id="常量在C语言中是如何表示的"><a href="#常量在C语言中是如何表示的" class="headerlink" title="常量在C语言中是如何表示的?"></a>常量在C语言中是如何表示的?</h2><pre><code>整数        十进制:     传统的写法        十六进制:   前面加0x或0X        八进制:     前面0   注意是数字零不是字母o浮点数        传统的写法            float x = 3.2;//传统                科学计数法            float x = 3.2e3; //x的值是 3200            float x = 123.45e-2; //x的值是1.2345,警告则在最后加F字符        单个字符用单引号括起来            &#39;A&#39;表示字符A            &#39;AB&#39; 错误            &quot;AB&quot; 正确        字符串用双引号括起来            &quot;A&quot;正确,因为&quot;A&quot;代表了 &#39;A&#39;&#39;\0&#39; 的组合</code></pre><h2 id="常量以什么样的二进制代码存储在计算机中"><a href="#常量以什么样的二进制代码存储在计算机中" class="headerlink" title="常量以什么样的二进制代码存储在计算机中?"></a>常量以什么样的二进制代码存储在计算机中?</h2><pre><code>整数是以补码的形式转化为二进制代码存储在计算机中的实数是以IEEE754标准转化为二进制代码存储在计算机中的字符的本质实际也是与整数的存储方式相同</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul><li>能够说出什么是编程语言</li><li>能够区分编程语言和标记语言的不同</li><li>能够说出常见的数据存储单位及其换算关系</li><li>能够说出内存的主要作用及其特点</li></ul><h2 id="主要知识点"><a href="#主要知识点" class="headerlink" title="主要知识点"></a>主要知识点</h2><ul><li>编程语言</li><li>计算机基础</li></ul><h2 id="1-1编程"><a href="#1-1编程" class="headerlink" title="1.1编程"></a>1.1编程</h2><p><em>编程：</em>就是让计算机解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。<br><em>计算机程序：</em>就是计算机所执行的一系列的<em>指令集合</em>，而程序全部都是用我们所掌控的语言来编写的，所以人们要控制<br>计算机一定要通过计算机语言向计算机发出指令。</p>]]></content>
       
       
       <categories>
@@ -146,6 +121,31 @@
         <tags>
             
             <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言学习笔记</title>
+      <link href="/2021/05/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2021/05/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="什么是数据类型"><a href="#什么是数据类型" class="headerlink" title="什么是数据类型"></a>什么是数据类型</h2><pre><code>基本类型数据    整数        整型        -- int          --4        短整型      -- short int    --2        长整型      -- long int     --8    浮点数[实数]        单精度浮点数 -- float   --4        双精度浮点数 -- double  --8    字符        char                   --1复合类型数据    结构体    枚举    共用体</code></pre><h2 id="变量为什么要初始化-重点"><a href="#变量为什么要初始化-重点" class="headerlink" title="变量为什么要初始化?(重点)"></a>变量为什么要初始化?(重点)</h2><p>变量的本质就是内存中一段存储空间<br>初始化就是赋值的意思</p><p>因为一个软件所分配的空间中极可能存在以前其他软件使用过后的残留数据,这些数据被称之为垃圾数据<br>所以通常情况下我们为一个变量,为一个数组,分配好存储空间之后都要对该内存空间初始化</p><h2 id="如何定义变量"><a href="#如何定义变量" class="headerlink" title="如何定义变量"></a>如何定义变量</h2><pre><code>    数据类型    变量名 = 要赋的值;等价于    数据类型    变量名;    变量名 = 要赋的值;例如:    int i = 3;            等价于 int i; i = 3;    int i, j;             等价于 int i; int j;    int i, j=3;           等价于 int i; int j; j = 3;    int i = 3, j = 5;     等价于 int i; int j; i = 3; j = 5;    int i, j ; i = j = 5; 等价于 int i, j; i = 5; j = 5;</code></pre><h2 id="什么是进制"><a href="#什么是进制" class="headerlink" title="什么是进制?"></a>什么是进制?</h2><pre><code>十进制逢十进一    例:0123456789二进制逢二进一    例:00101000n进制逢n进一</code></pre><h2 id="常量在C语言中是如何表示的"><a href="#常量在C语言中是如何表示的" class="headerlink" title="常量在C语言中是如何表示的?"></a>常量在C语言中是如何表示的?</h2><pre><code>整数        十进制:     传统的写法        十六进制:   前面加0x或0X        八进制:     前面0   注意是数字零不是字母o浮点数        传统的写法            float x = 3.2;//传统                科学计数法            float x = 3.2e3; //x的值是 3200            float x = 123.45e-2; //x的值是1.2345,警告则在最后加F字符        单个字符用单引号括起来            &#39;A&#39;表示字符A            &#39;AB&#39; 错误            &quot;AB&quot; 正确        字符串用双引号括起来            &quot;A&quot;正确,因为&quot;A&quot;代表了 &#39;A&#39;&#39;\0&#39; 的组合</code></pre><h2 id="常量以什么样的二进制代码存储在计算机中"><a href="#常量以什么样的二进制代码存储在计算机中" class="headerlink" title="常量以什么样的二进制代码存储在计算机中?"></a>常量以什么样的二进制代码存储在计算机中?</h2><pre><code>整数是以补码的形式转化为二进制代码存储在计算机中的实数是以IEEE754标准转化为二进制代码存储在计算机中的字符的本质实际也是与整数的存储方式相同</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机/编程/基础 </tag>
             
         </tags>
       
