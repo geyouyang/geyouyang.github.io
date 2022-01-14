@@ -29,31 +29,6 @@
     
     
     <entry>
-      <title>计算机编程导论(编程语言)</title>
-      <link href="/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/"/>
-      <url>/2021/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%9F%BA%E7%A1%80(%E7%BC%96%E7%A8%8B)/</url>
-      
-        <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul><li>能够说出什么是编程语言</li><li>能够区分编程语言和标记语言的不同</li><li>能够说出常见的数据存储单位及其换算关系</li><li>能够说出内存的主要作用及其特点</li></ul><h2 id="主要知识点"><a href="#主要知识点" class="headerlink" title="主要知识点"></a>主要知识点</h2><ul><li>编程语言</li><li>计算机基础</li></ul><h2 id="1-1编程"><a href="#1-1编程" class="headerlink" title="1.1编程"></a>1.1编程</h2><p><em>编程：</em>就是让计算机解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。<br><em>计算机程序：</em>就是计算机所执行的一系列的<em>指令集合</em>，而程序全部都是用我们所掌控的语言来编写的，所以人们要控制<br>计算机一定要通过计算机语言向计算机发出指令。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 计算机/编程/基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Markdown常用语法</title>
       <link href="/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
       <url>/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
@@ -145,7 +120,7 @@
       
         <tags>
             
-            <tag> 计算机/编程/基础 </tag>
+            <tag> 基础 C语言 </tag>
             
         </tags>
       
