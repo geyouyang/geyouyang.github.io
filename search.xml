@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>Javascript</title>
-      <link href="/2021/07/08/javascript/"/>
-      <url>/2021/07/08/javascript/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Markdown常用语法</title>
       <link href="/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
       <url>/2021/07/01/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
@@ -133,7 +108,7 @@
       <link href="/2021/06/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%8A%A5%E9%94%9901-This%20function%20or%20variable%20may%20be%20unsafe/"/>
       <url>/2021/06/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%8A%A5%E9%94%9901-This%20function%20or%20variable%20may%20be%20unsafe/</url>
       
-        <content type="html"><![CDATA[<p>在使用visual studio学习C语言的过程中,经常遇到”This function or variable may be unsafe.” 无法运行程序</p><p>问题现象:<br>![](<a href="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/This">https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/This</a> function or variable may be unsafe.png)</p><p>使用了scanf函数:程序报错:<br>error C4996: ‘scanf’: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</p><p>翻译一下:<br>“scanf”：此函数或变量可能不安全。考虑使用scanf_s代替。要禁用弃用警告，请使用_CRT_SECURE_NO_WARNINGS。有关详细信息，请参阅联机帮助。</p><p>问题原因:<br>C语言的标准函数中,一些读取或写入内存的函数存在内存越界的问题,从而使得内存数据变得不安全.如scanf、gets、strcat等函数都存在着这样的问题.<br>但在学习中几乎所有的课本或教程都使用原来的标准函数.所以当我们在vs中使用原始的函数,编译器就会报错</p><p>以下是解决办法:<br>编译器给出的错误提示中,实际上已经给我们了一个明确的解决方案,只需要在程序的开头添加一个宏定义就能解决</p><ol><li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS </span></span><br><span class="line"><span class="comment">// #define _CRT_SECURE_NO_WARNINGS 该语句必须在# include &lt;stdio.h&gt; 之前,否则还是会报错</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br></pre></td></tr></table></figure></li><li><p>(推荐)<br>第一种方法能够顺利解决问题,但是在实际的应用中,每次在使用到相关函数时,都需要在文件前面,或者在头文件中添加相关宏,未免太麻烦<br>所以,我们可以对vs的项目进行设置,可以一劳永逸的解决这个问题<br>注:(仅适用于当前项目,其他项目仍然需要再次进行相同配置才能生效)</p></li></ol><p>具体步骤如下:</p><ol><li>在项目属性设置中找到选项卡配置属性→C/C++→预处理器;</li><li>在右侧的参数中找到预处理器定义，编辑其参数;</li><li>在参数的末尾添加定义_CRT_SECURE_NO_WARNINGS</li></ol><p>图示:<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/This-function-or-variable-may-be-unsafe-jiejue01.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p>在使用visual studio学习C语言的过程中,经常遇到”This function or variable may be unsafe.” 无法运行程序</p><p>问题现象:</p><p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/unsafe-error01.png"></p><p>使用了scanf函数:程序报错:<br>error C4996: ‘scanf’: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</p><p>翻译一下:<br>“scanf”：此函数或变量可能不安全。考虑使用scanf_s代替。要禁用弃用警告，请使用_CRT_SECURE_NO_WARNINGS。有关详细信息，请参阅联机帮助。</p><p>问题原因:<br>C语言的标准函数中,一些读取或写入内存的函数存在内存越界的问题,从而使得内存数据变得不安全.如scanf、gets、strcat等函数都存在着这样的问题.<br>但在学习中几乎所有的课本或教程都使用原来的标准函数.所以当我们在vs中使用原始的函数,编译器就会报错</p><p>以下是解决办法:<br>编译器给出的错误提示中,实际上已经给我们了一个明确的解决方案,只需要在程序的开头添加一个宏定义就能解决</p><ol><li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS </span></span><br><span class="line"><span class="comment">// #define _CRT_SECURE_NO_WARNINGS 该语句必须在# include &lt;stdio.h&gt; 之前,否则还是会报错</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br></pre></td></tr></table></figure></li><li><p>(推荐)<br>第一种方法能够顺利解决问题,但是在实际的应用中,每次在使用到相关函数时,都需要在文件前面,或者在头文件中添加相关宏,未免太麻烦<br>所以,我们可以对vs的项目进行设置,可以一劳永逸的解决这个问题<br>注:(仅适用于当前项目,其他项目仍然需要再次进行相同配置才能生效)</p></li></ol><p>具体步骤如下:</p><ol><li>在项目属性设置中找到选项卡配置属性→C/C++→预处理器;</li><li>在右侧的参数中找到预处理器定义，编辑其参数;</li><li>在参数的末尾添加定义_CRT_SECURE_NO_WARNINGS</li></ol><p>图示:<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/This-function-or-variable-may-be-unsafe-jiejue01.jpg"></p>]]></content>
       
       
       <categories>
