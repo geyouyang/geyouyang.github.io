@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C语言学习笔记05-枚举~结局 | 歌悠扬的博客</title><meta name="keywords" content="C语言"><meta name="author" content="歌悠扬,xiegelive@hotmail.com"><meta name="copyright" content="歌悠扬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="枚举(理解)什么是枚举把一个事物所有可能的取值一一列举出来 怎样使用枚举12345678910111213141516171819# include&lt;stdio.h&gt;enum WeekDay &#x2F;&#x2F;enum是枚举的意思.跟结构体一样,只定义了一个数据类型,并没有定义变量,该数据类型的名字是 enum WeekDay&amp;#123;	MonDay, Tueday, WednesDay, Tur">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习笔记05-枚举~结局">
+<meta property="og:url" content="https://geyouyang.top/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/index.html">
+<meta property="og:site_name" content="歌悠扬的博客">
+<meta property="og:description" content="枚举(理解)什么是枚举把一个事物所有可能的取值一一列举出来 怎样使用枚举12345678910111213141516171819# include&lt;stdio.h&gt;enum WeekDay &#x2F;&#x2F;enum是枚举的意思.跟结构体一样,只定义了一个数据类型,并没有定义变量,该数据类型的名字是 enum WeekDay&amp;#123;	MonDay, Tueday, WednesDay, Tur">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg">
+<meta property="article:published_time" content="2021-07-12T11:29:13.000Z">
+<meta property="article:modified_time" content="2022-03-09T10:12:57.391Z">
+<meta property="article:author" content="歌悠扬">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://geyouyang.top/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言学习笔记05-枚举~结局',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-09 18:12:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-comments faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat faa-tada"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="fa-fw fas fa-music faa-tada"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-fw fas fa-gamepad faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-fw fas fa-video faa-tada"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-heart faa-tada"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">歌悠扬的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-comments faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat faa-tada"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="fa-fw fas fa-music faa-tada"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-fw fas fa-gamepad faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-fw fas fa-video faa-tada"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-heart faa-tada"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言学习笔记05-枚举~结局</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-12T11:29:13.000Z" title="发表于 2021-07-12 19:29:13">2021-07-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-09T10:12:57.391Z" title="更新于 2022-03-09 18:12:57">2022-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C语言基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C语言学习笔记05-枚举~结局"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="枚举-理解"><a href="#枚举-理解" class="headerlink" title="枚举(理解)"></a>枚举(理解)</h1><h2 id="什么是枚举"><a href="#什么是枚举" class="headerlink" title="什么是枚举"></a>什么是枚举</h2><p>把一个事物所有可能的取值一一列举出来</p>
+<h2 id="怎样使用枚举"><a href="#怎样使用枚举" class="headerlink" title="怎样使用枚举"></a>怎样使用枚举</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">WeekDay</span> //<span class="title">enum</span>是枚举的意思.跟结构体一样,只定义了一个数据类型,并没有定义变量,该数据类型的名字是 <span class="title">enum</span> <span class="title">WeekDay</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	MonDay, Tueday, WednesDay, TursDay, FriDay, SaturDay, Sunday</span><br><span class="line">&#125;; <span class="comment">//别忘记;号</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//int day; //day定义成int类型不太合适,取值范围太大</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">WeekDay</span> <span class="title">day</span> =</span> SaturDay;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, day);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="枚举的优缺点"><a href="#枚举的优缺点" class="headerlink" title="枚举的优缺点"></a>枚举的优缺点</h2><p>代码更安全<br>书写麻烦</p>
+<h1 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符:"></a>位运算符:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&amp;    按位与</span><br><span class="line">	&amp;&amp; 逻辑与 也叫并且</span><br><span class="line">	&amp;&amp;与&amp; 的含义完全不同</span><br><span class="line"></span><br><span class="line">&amp;:</span><br><span class="line">规则:只有对应的两个二进位都为1时，结果位才为1</span><br><span class="line">1&amp;1=1</span><br><span class="line">1&amp;0=0</span><br><span class="line">0&amp;1=0</span><br><span class="line">0&amp;0=0 </span><br><span class="line"></span><br><span class="line">21&amp;7=5 //0001 0101 &amp; 0000 0111 = 0000 0101 = 5</span><br><span class="line"></span><br><span class="line">&amp;&amp;:</span><br><span class="line">k = i &amp;&amp; j; //k的值只能是1或0,因为&amp;&amp;是逻辑运算符,逻辑运算符的结果只能是真或假,在C中,真用1表示,假用0表示</span><br><span class="line">printf(&quot;%d\n&quot;, k);</span><br><span class="line"></span><br><span class="line">|  按位或</span><br><span class="line">	||逻辑或</span><br><span class="line">	|按位或</span><br><span class="line"></span><br><span class="line">规则:</span><br><span class="line">1|0 = 1</span><br><span class="line">1|1 = 1</span><br><span class="line">0|1 = 1</span><br><span class="line">0|0 = 0</span><br><span class="line"></span><br><span class="line">~  按位取反</span><br><span class="line">	~i就是把i变量所有的二进制位取反</span><br><span class="line"></span><br><span class="line">^ 按位异或</span><br><span class="line">	相同为零</span><br><span class="line">	不同为1</span><br><span class="line">	1^0 = 1</span><br><span class="line">	0^1 = 1</span><br><span class="line">	1^1 = 0</span><br><span class="line">	0^0 = 0</span><br><span class="line"></span><br><span class="line">&lt;&lt; 按位左移 (重要)</span><br><span class="line">i&lt;&lt;3  表示把i的所有二进制位左移3位,右边补0</span><br><span class="line">左移n位相当于乘以2的n次方</span><br><span class="line"></span><br><span class="line">考试题目:</span><br><span class="line">A: i = i*8;</span><br><span class="line">B: i = i&lt;&lt;3;</span><br><span class="line"></span><br><span class="line">请问上述两个语句,哪个语句执行的速度快</span><br><span class="line">答案:B快</span><br><span class="line"></span><br><span class="line">&gt;&gt; 按位右移</span><br><span class="line">i&gt;&gt;3 表示把i的所有二进制位右移3位,左边一般是0,根据最高位补或者全部补0.</span><br><span class="line">右移n位相当于除以2的n次方,前提是数据不能丢失</span><br><span class="line"></span><br><span class="line">位运算符的现实意义:通过位运算符我们可以对数据的操作精确到每一位</span><br></pre></td></tr></table></figure>
+
+<h2 id="补码-次等重要"><a href="#补码-次等重要" class="headerlink" title="补码(次等重要)"></a>补码(次等重要)</h2><h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><p>也叫 符号-绝对值码<br>最高位0表示正,1表示负,其余二进制位是该数字的绝对值的二进制位</p>
+<p>原码简单易懂,加减运算复杂<br>存在加减乘除四种运算,增加了CPU的复杂度<br>零的表示不唯一</p>
+<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><p>反码运算不便,也没有在计算机中应用</p>
+<h3 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h3><p>移码表示数值平移n位,n称为移码量<br>移码主要用于浮点数的阶码的存储</p>
+<h3 id="补码-重点-解决整数的存储"><a href="#补码-重点-解决整数的存储" class="headerlink" title="补码(重点):解决整数的存储"></a>补码(重点):解决整数的存储</h3><h4 id="已知十进制求二进制"><a href="#已知十进制求二进制" class="headerlink" title="已知十进制求二进制"></a>已知十进制求二进制</h4><h5 id="求正整数的二进制"><a href="#求正整数的二进制" class="headerlink" title="求正整数的二进制"></a>求正整数的二进制</h5><p>除2取余,直至商为零,余数倒序排列</p>
+<h5 id="求负整数的二进制"><a href="#求负整数的二进制" class="headerlink" title="求负整数的二进制"></a>求负整数的二进制</h5><p>先求与该负数相对应的正整数的二进制代码,然后将所有位取反,末尾加1,不够位数时,左边补1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/buma01.png"></p>
+<h5 id="零转二进制"><a href="#零转二进制" class="headerlink" title="零转二进制"></a>零转二进制</h5><p>全是零</p>
+<h4 id="已知二进制转十进制"><a href="#已知二进制转十进制" class="headerlink" title="已知二进制转十进制"></a>已知二进制转十进制</h4><ul>
+<li><p>如果首位是0,则表明是正整数,按普通方法来求</p>
+</li>
+<li><p>如果首位是1,则表明是负整数<br>将所有位取反,末尾加1,所得数字就是该负数的绝对值</p>
+</li>
+</ul>
+<p><em>为什么负整数位数不够需要前面补1?</em></p>
+<p>当正整数:比如十进制中的1,用二进制表示01,当二进制转十进制的时候,你只需要输入01,系统会自动在01前头补30个0来凑够32位.</p>
+<p>当你是十进制中的-1时,用二进制表示的时候,先取十进制-1的绝对值1的二进制,这时候要注意,系统需要的是32位.你必须手动在前头补30个1,否则系统会自动给你补30个0,导致二进制的11被认为是正整数3,而不是-1</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0xFFFFFFEF</span>;	<span class="comment">//FFFF是两个字节的16进制数,表示2的16次方,系统需要凑够32位.所以负数前面有多个F</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">在VS中的输出结果是:</span><br><span class="line"><span class="number">-17</span></span><br></pre></td></tr></table></figure>
+<p>比如负整数1001010忽略前面补位,化为十进制<br>取反:0110101<br>末尾加1: 0110110<br>2的5次方+2的4次方+2的2次方+2的1次方=54<br>因为计算机看首位判断正负,1001010前面是1,所以为负<br>所以结果为-54</p>
+<ul>
+<li>如果全是零,则对应的十进制数字就是零</li>
+</ul>
+<p>学习目标:<br>在Vc++6.0中一个int类型的变量所能存储的数字的范围是多少<br>int类型变量所能存储的最大整数十六进制最大的整数是:7FFFFFFF<br>int类型变量所能存储的绝对值最大的负整数用十六进制表示是:80000000</p>
+<p>绝对值最小负数的二进制代码是多少<br>最大正数的二进制代码是多少<br>已知一个整数的二进制代码求出原始的数字<br>数字超过最大正数会怎么样<br>不同类型数据的相互转化</p>
+<p>最重要是把这张图学明白<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/buma02.png"></p>
+<h2 id="进制转换-最重要"><a href="#进制转换-最重要" class="headerlink" title="进制转换(最重要)"></a>进制转换(最重要)</h2><p>生活中遇到进制的例子</p>
+<ul>
+<li>一周一天: 七进制</li>
+<li>一年十二个月: 十二进制</li>
+<li>一小时六十分: 六十进制</li>
+<li>电脑中的数据: 二进制</li>
+</ul>
+<p>预备知识:<br>小数除以大数,则商为零,余数是小数本身</p>
+<p>如:<br>1/2=0 余数1<br>2/2=1 余数0<br>3/2=1 余数1</p>
+<h3 id="十进制转r进制"><a href="#十进制转r进制" class="headerlink" title="十进制转r进制:"></a>十进制转r进制:</h3><p>总结:<br>方法:除r取余,直至商0,余数倒序排列<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi01.png"></p>
+<p>注意:不要用传统除法,用短除法<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi02.png"></p>
+<p>例十进制1000转化成16进制</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i =<span class="number">1000</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%#X&quot;</span>, i);	<span class="comment">//%#x比%x更好,因为在前面加上OX提示16进制,比3E8更明显</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="r进制转为十进制"><a href="#r进制转为十进制" class="headerlink" title="r进制转为十进制"></a>r进制转为十进制</h3><p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi03.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi04.png"></p>
+<h3 id="二进制与十六进制的转化"><a href="#二进制与十六进制的转化" class="headerlink" title="二进制与十六进制的转化"></a>二进制与十六进制的转化</h3><p>因为16是2的4次方,所以转化成16进制需要4位,不够补0<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi05.png"></p>
+<h3 id="十六进制与二进制的转化"><a href="#十六进制与二进制的转化" class="headerlink" title="十六进制与二进制的转化"></a>十六进制与二进制的转化</h3><p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi06.png"></p>
+<h3 id="二进制与八进制相互转化"><a href="#二进制与八进制相互转化" class="headerlink" title="二进制与八进制相互转化"></a>二进制与八进制相互转化</h3><p>因为8是2的3次方,所以需要3位,不够补0<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi07.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/jinzhi08.png"></p>
+<h3 id="十六进制与八进制相互转化"><a href="#十六进制与八进制相互转化" class="headerlink" title="十六进制与八进制相互转化"></a>十六进制与八进制相互转化</h3><p>不存在十六进制与八进制的直接相互转化,都是以二进制我中间进制来进行转化的</p>
+<h2 id="二进制全部位零的含义-–00000000000000的含义"><a href="#二进制全部位零的含义-–00000000000000的含义" class="headerlink" title="二进制全部位零的含义 –00000000000000的含义"></a>二进制全部位零的含义 –00000000000000的含义</h2><ol>
+<li>数值零</li>
+<li>字符串结束标识符’\0’</li>
+<li>空指针NULL<br>NULL本质也是零,而这个零不代表数字零,而表示的是内存单元的编号零</li>
+</ol>
+<p>我们计算机规定了,以零为编号的存储单元的内容不可读,不可写</p>
+<h2 id="字符串的处理-了解"><a href="#字符串的处理-了解" class="headerlink" title="字符串的处理(了解)"></a>字符串的处理(了解)</h2><h1 id="链表-连结C语言和数据结构的知识"><a href="#链表-连结C语言和数据结构的知识" class="headerlink" title="链表:连结C语言和数据结构的知识"></a>链表:连结C语言和数据结构的知识</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>通俗定义:解题的方法和步骤</p>
+<p>狭义定义:对存储数据的操作<br>对不同的存储结构,要完成某一个功能所执行的操作是不一样的<br>比如:<br>要输出数组中所有的元素的操作和<br>要输出链表中所有元素的操作肯定是不一样的</p>
+<p>这说明:<br><em>算法是依附于存储结构的</em><br><em>不同的存储结构,所执行的算法是不一样的</em></p>
+<p>广义定义:广义的算法也叫泛型:无论数据是如何存储的,对该数据的操作都是一样的</p>
+<p>我们至少可以通过两种结构来存储数据:<br>数组:<br>优点:存取速度快<br>缺点:插入和删除元素的效率很低</p>
+<p>链表:</p>
+<p>专业术语:<br>头结点<br>头结点的数据类型和首节点的类型是一模一样的<br>头结点是首节点前面的那个节点<br>头结点并不存放有效数据<br>设置头结点的目的是为了方便对链表的操作</p>
+<p>头指针<br>存放头结点地址的指针变量</p>
+<p>首节点<br>存放第一个有效数据的节点</p>
+<p>尾节点<br>存放最后一个有效数据的节点</p>
+<p>确定一个链表需要一个参数:头指针</p>
+<p>链表的优缺点:<br>优点:插入删除元素效率高<br>     不需要一个连续的很大的内存</p>
+<p>缺点:查找某个位置的元素效率低</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义了一个链表节点的数据类型</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;	<span class="comment">//数字域</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">pNext</span>;</span> <span class="comment">//指针域</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"><span class="function">struct Node* <span class="title">CreateList</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseList</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">pHead</span>;</span> <span class="comment">//pHead用来存放链表头结点的地址</span></span><br><span class="line"></span><br><span class="line">	pHead = CreateList(); <span class="comment">//createlise()功能:创建一个非循环单链表,并将该链表头结点的地址赋给了pHead</span></span><br><span class="line">	TraverseList(pHead);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对链表操作(遍历)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse_list</span><span class="params">(struct Node * pHead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> * <span class="title">p</span> =</span> pHead-&gt;pNext;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">NULL</span> != p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, p-&gt;data);</span><br><span class="line">		p = p-&gt;pNext;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="文件的输入和输出"><a href="#文件的输入和输出" class="headerlink" title="文件的输入和输出"></a>文件的输入和输出</h1><h2 id="文件是什么"><a href="#文件是什么" class="headerlink" title="文件是什么"></a>文件是什么</h2><ul>
+<li><p>所谓”文件”是指一组相关数据的有序集合.这个数据集有一个名称,叫做文件名.实际上在前面的各章我们已经多次使用了文件,例如原程序文件(.c),目标文件(.obj),可执行文件(.exe),库文件(头文件等)</p>
+</li>
+<li><p>文件通常是驻留在外部介质(如磁盘等)上的,在使用时才调入内存中来.<br>从不同的角度可对文件作不同的分类.从用户的角度看,文件可以分为普通文件和设备文件两种.</p>
+</li>
+</ul>
+<p>操作系统是以<em>文件</em>为单位对数据进行管理的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/html-illustration/wenjian01.png"></p>
+<h2 id="文件的分类"><a href="#文件的分类" class="headerlink" title="文件的分类"></a>文件的分类</h2><h3 id="从用户观点"><a href="#从用户观点" class="headerlink" title="从用户观点:"></a>从用户观点:</h3><ul>
+<li>特殊文件(标准输入输出文件或标准设备文件)</li>
+<li>普通文件(磁盘文件)</li>
+</ul>
+<h3 id="从操作系统的角度看"><a href="#从操作系统的角度看" class="headerlink" title="从操作系统的角度看"></a>从操作系统的角度看</h3><p>每一个与主机相连的输入,输出设备看作是一个文件</p>
+<p>例:<br>输入文件:终端键盘    输出文件:显示屏和打印机</p>
+<h3 id="按数据的组织形式"><a href="#按数据的组织形式" class="headerlink" title="按数据的组织形式:"></a>按数据的组织形式:</h3><ul>
+<li>ASCII文件(文本文件):每一个字节放一个ASCII代码</li>
+<li>二进制文件:把内存中的数据按其在内存中的存储形式原样输出到磁盘存放</li>
+</ul>
+<p>例如整数10000D(D表示十进制输出)在内存中的存储形式以及分别按ASCII码形式和二进制形式输出如下图所示:<br><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Cstudy/wenjian02.png"></p>
+<h4 id="ASCII文件和二进制文件的比较"><a href="#ASCII文件和二进制文件的比较" class="headerlink" title="ASCII文件和二进制文件的比较:"></a>ASCII文件和二进制文件的比较:</h4><ul>
+<li><p>ASCII文件便于对字符进行逐个处理,也便于输出字符.但一般所占存储空间较多,而且要花费转换时间</p>
+</li>
+<li><p>二进制文件可以节省外存空间和转换时间,但一个字节并不对应一个字符,不能直接输出字符形式.</p>
+</li>
+</ul>
+<p>一般中间结果数据需要暂时保存在外存上,以后又需要输入内存的,常用二进制文件保存.</p>
+<h2 id="C语言对文件的处理方法"><a href="#C语言对文件的处理方法" class="headerlink" title="C语言对文件的处理方法"></a>C语言对文件的处理方法</h2><ul>
+<li>缓冲文件系统:系统自动地在内存区为每一个正在使用的文件开辟一个缓冲区.用缓冲文件系统进行的输入输出又称为高级磁盘输入输出.</li>
+</ul>
+<ul>
+<li>非缓冲文件系统:系统不自动开辟确定大小的缓冲区,而由程序为每个文件设定缓冲区.用非缓冲文件系统进行输入输出又称为低级输入输出系统.</li>
+</ul>
+<h2 id="课外知识"><a href="#课外知识" class="headerlink" title="课外知识"></a>课外知识</h2><ul>
+<li>在UNIX系统下,用缓冲文件系统来处理文本文件,用非缓冲文件系统来处理二进制文件</li>
+</ul>
+<ul>
+<li>ANSIC标准(国际C语言标准)只采用缓冲文件系统来处理文本文件和二进制文件</li>
+</ul>
+<ul>
+<li>C语言中对文件的读写都是用库函数来实现</li>
+</ul>
+<h1 id="文件的打开与关闭"><a href="#文件的打开与关闭" class="headerlink" title="文件的打开与关闭"></a>文件的打开与关闭</h1><p>文件型指针变量:<br>FILE *fp;</p>
+<p> fp是一个指向FILE类型结构体的指针变量</p>
+<p> 我们使fp指向某一个文件的结构体变量,从而通过该结构体变量中的文件信息,能够访问该文件.</p>
+<p> 如果有n个文件,一般应设n个指针变量,使它们分别指向n个文件,以实现对文件的访问.</p>
+<p>FILE类型的数组:<br><code>FILE f[5];</code> 定义了一个结构体数组f,它有5个元素,可以用来存放5个文件的信息.</p>
+<h2 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h2><p>文件的打开(fopen函数)</p>
+<p>函数调用:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FILE *fp;</span><br><span class="line">fp = fopen //(文件名,使用文件方式);</span><br></pre></td></tr></table></figure>
+
+<p>注意:<br>需要打开的文件名,也就是准备访问的文件的名字<br>使用文件的方式(“读”还是”写”等);<br>让哪一个指针变量指向被打开的文件</p>
+<h2 id="文件的使用方式"><a href="#文件的使用方式" class="headerlink" title="文件的使用方式"></a>文件的使用方式</h2><p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Cstudy/wenjian03.png"></p>
+<p>一般常用的:<br>“r” 只读<br>“w” 只写</p>
+<h3 id="对于文件使用方式有以下几点说明"><a href="#对于文件使用方式有以下几点说明" class="headerlink" title="对于文件使用方式有以下几点说明"></a>对于文件使用方式有以下几点说明</h3><ul>
+<li><p>凡用”r”打开一个文件时,该文件必须已经存在,且只能从该文件读出</p>
+</li>
+<li><p>用”w”打开的文件只能向该文件写入.若打开的文件不存在,则以指定的文件名建立该文件,若打开的文件已经存在,则将该文件删去,重建一个新文件</p>
+</li>
+<li><p>若要向一个已存在的文件追加新的信息,只能用”a”方式打开文件.但此时该文件必须是存在的,否则将会出错.</p>
+</li>
+<li><p>在打开一个文件时,如果出错,fopen将返回一个空指针NULL</p>
+</li>
+<li><p>在程序中可以用这一信息来判别是否完成打开文件的工作,并作相应的处理.</p>
+</li>
+<li><p>把一个文本文件读入内存时,要将ASCII码转换成二进制码,而把文件以文本方式写入磁盘时,也要把二进制码转换成ASCII码,因此文本文件的读写要花费较多的转换时间.对二进制文件的读写不存在这种转换.</p>
+</li>
+</ul>
+<p>文件打开示例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	FILE* fp;</span><br><span class="line">	<span class="keyword">if</span> (!(fp = fopen(<span class="string">&quot;D:\\geyouyang.txt&quot;</span>, <span class="string">&quot;w&quot;</span>))) <span class="comment">//注意要双&quot;\&quot;</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;不能够打开D:\\geyouyang.txt\n&quot;</span>);</span><br><span class="line">		system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;成功打开!\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="文件的关闭-fclose函数"><a href="#文件的关闭-fclose函数" class="headerlink" title="文件的关闭(fclose函数)"></a>文件的关闭(fclose函数)</h2><p>函数调用:<br>fclose (文件指针);</p>
+<p>函数功能:<br>使文件指针变量不指向该文件,也就是文件指针变量与文件”脱钩”,以后不能再通过该指针对原来与其相联系的文件进行读写操作.</p>
+<p>返回值:<br>关闭成功返回值为0;否则返回EOF(-1)</p>
+<h2 id="文件的读写"><a href="#文件的读写" class="headerlink" title="文件的读写"></a>文件的读写</h2><ul>
+<li>对文件的读和写是最常用的文件操作.<br>在C语言中提供了多种文件读写的函数:</li>
+</ul>
+<ul>
+<li>字符读写函数:  fgetc和fputc</li>
+<li>字符串读写函数: fgets 和 fputs</li>
+</ul>
+<ul>
+<li>数据块读写函数: fread 和 fwrite</li>
+</ul>
+<ul>
+<li>格式化读写函数: fscanf和 fprintf</li>
+</ul>
+<p>使用以上函数都要求包含头文件stdio.h</p>
+<h3 id="字符读写函数-fgetc和fputc"><a href="#字符读写函数-fgetc和fputc" class="headerlink" title="字符读写函数: fgetc和fputc"></a>字符读写函数: fgetc和fputc</h3><p>一,字符输入输出函数(fputc()和fgetc())</p>
+<p>fputc()函数调用:</p>
+<p>fputc(ch’fp);</p>
+<p>函数功能:<br>将字符 (ch的值)输出到fp所指向的文件中去</p>
+<h4 id="对于fputc函数的使用要说明几点"><a href="#对于fputc函数的使用要说明几点" class="headerlink" title="对于fputc函数的使用要说明几点"></a>对于fputc函数的使用要说明几点</h4><ul>
+<li><p>用写或读写方式打开一个已经存在的文件时将清除原有的文件内容,写入字符从文件首开始.如需保留原有文件内容,希望写入的字符以文件末开始存放,必须以追加方式打开文件.被写入的文件若不存在,则创建该文件.</p>
+</li>
+<li><p>每写入一个字符,文件内部位置指针向后移动一个字节.</p>
+</li>
+<li><p>fputc函数有一个返回值,如写入成功则返回写入的字符,否则返回一个EOF.可用此来判断写入是否成功.</p>
+</li>
+</ul>
+<p>文件写入例子:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	FILE* fp;</span><br><span class="line">	<span class="keyword">char</span> ch, filename[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入您需要写入的文件名&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, filename);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!(fp = fopen(filename, <span class="string">&quot;wt+&quot;</span>)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;无法打开文件\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>); <span class="comment">//终止程序 //需要先stdlib.h才能使用</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入你需要写入的句子: &quot;</span>);</span><br><span class="line">	ch = getchar();</span><br><span class="line">	ch = getchar();</span><br><span class="line">	<span class="keyword">while</span> (ch != EOF) <span class="comment">//ctrl + z</span></span><br><span class="line">	&#123;</span><br><span class="line">		fputc(ch, fp);</span><br><span class="line">		ch = getchar();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fclose(fp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">在VS中的输出结果是:</span></span><br><span class="line"><span class="comment">请输入您需要写入的文件名123</span></span><br><span class="line"><span class="comment">请输入你需要写入的句子: 567</span></span><br><span class="line"><span class="comment">567</span></span><br><span class="line"><span class="comment">^Z</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">D:\studyC\文件写入\x64\Debug\文件写入.exe (进程 3064)已退出，代码为 0。</span></span><br><span class="line"><span class="comment">按任意键关闭此窗口. . .</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="fgetc-函数调用"><a href="#fgetc-函数调用" class="headerlink" title="fgetc()函数调用:"></a>fgetc()函数调用:</h3><p>ch=fgetc(fp);</p>
+<p>函数功能:<br>其意义是从打开的文件fp中读取一个字符并送入ch中</p>
+<h4 id="fgetc-函数使用说明"><a href="#fgetc-函数使用说明" class="headerlink" title="fgetc()函数使用说明"></a>fgetc()函数使用说明</h4><ul>
+<li>在fgetc函数调用中,读取的文件必须是以读或读写方式打开的</li>
+<li>当文件内部有一个位置指针.用来指向文件的当前读写字节</li>
+<li>在文件打开时,该指针总是指向文件的第一个字节.使用fgetc函数后,该位置指针将向后移动一个字节.因此可连续多次使用fgetc函数,读取多个字符</li>
+<li>应注意文件指针和文件内部的位置指针不是一回事</li>
+<li>文件指针是指向整个文件的,需在程序中定义说明,只要不重新赋值,文件指针的值是不变的.</li>
+<li>文件内部的位置指针用以指示文件内部的当前读写位置,每读写一次,该指针均向后移动,它不需在程序中定义说明,而是由系统自动设置的.</li>
+</ul>
+<h4 id="补充-从一个文本文件顺序读入字符并在屏幕上显示出来"><a href="#补充-从一个文本文件顺序读入字符并在屏幕上显示出来" class="headerlink" title="补充:从一个文本文件顺序读入字符并在屏幕上显示出来:"></a>补充:从一个文本文件顺序读入字符并在屏幕上显示出来:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ch = fgetc (fp);</span><br><span class="line">while(ch! = EOF)</span><br><span class="line">&#123;</span><br><span class="line">	putchar(ch);</span><br><span class="line">	ch = fgetc(fp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意:EOF不是可输出字符,因此不能在屏幕上显示.由于字符的ASCII码不可能出现-1,因此EOF定义为-1是合适的,当读入的字符值等于-1时,表示读入的已不是正常的字符而是文件结束符.</p>
+<h4 id="补充-从一个二进制文件顺序读入字符"><a href="#补充-从一个二进制文件顺序读入字符" class="headerlink" title="补充:从一个二进制文件顺序读入字符:"></a>补充:从一个二进制文件顺序读入字符:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while (!feof(fp)) //eof=end of file文件结束意思</span><br><span class="line">&#123;</span><br><span class="line">	ch = fgetc(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:ANSIC提供一个feof()函数来判断文件是否真的结束.如果是文件结束,函数feof(fp)的值为1(真);否则为0(假).以上也适用于文本文件的读取</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xiegelive@hotmail.com">歌悠扬</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://geyouyang.top/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/">https://geyouyang.top/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://geyouyang.top" target="_blank">歌悠扬的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/13/%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F-%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">经典指针程序-互换两个数字</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B02-%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E5%BA%8F%E5%88%97/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何看懂程序举例02-斐波拉契序列</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/17/(C练习)求1~100之间的奇数和/" title="求1~100之间的奇数和"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-17</div><div class="title">求1~100之间的奇数和</div></div></a></div><div><a href="/2021/06/17/(C练习)求1~100之间的奇数的个数/" title="求1~100之间的奇数的个数"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover02.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-17</div><div class="title">求1~100之间的奇数的个数</div></div></a></div><div><a href="/2021/06/17/(C练习)求1~100之间的奇数和与偶数之和/" title="求1~100之间的奇数和与偶数之和"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-17</div><div class="title">求1~100之间的奇数和与偶数之和</div></div></a></div><div><a href="/2021/06/17/(C练习)求1~100之间的奇数的平均值/" title="求1~100之间的奇数的平均值"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-17</div><div class="title">求1~100之间的奇数的平均值</div></div></a></div><div><a href="/2021/07/01/(C练习)求1到某个数字之间(包括该数字)所有的素数 copy 2/" title="(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-01</div><div class="title">(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)</div></div></a></div><div><a href="/2021/07/01/(C练习)求1到某个数字之间(包括该数字)所有的素数 copy/" title="(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(原始方法)"><img class="cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-01</div><div class="title">(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(原始方法)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Twikoo</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">歌悠扬</div><div class="author-info__description">只有一种失败叫中途放弃</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/jiaqq.jpg"><i></i><span>Contact me</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/geyouyang" target="_blank" title="Github"><i class="fa-fw fab fa-github faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:xiegelive@hotmail.com" target="_blank" title="Email"><i class="fa-fw fas fa-envelope faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/101706302" target="_blank" title="Bilibili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">ACG兼技术向的个人博客,欢迎各位!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE-%E7%90%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">枚举(理解)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.1.</span> <span class="toc-text">什么是枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.2.</span> <span class="toc-text">怎样使用枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text">枚举的优缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">位运算符:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81-%E6%AC%A1%E7%AD%89%E9%87%8D%E8%A6%81"><span class="toc-number">2.1.</span> <span class="toc-text">补码(次等重要)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%A0%81"><span class="toc-number">2.1.1.</span> <span class="toc-text">原码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E7%A0%81"><span class="toc-number">2.1.2.</span> <span class="toc-text">反码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E7%A0%81"><span class="toc-number">2.1.3.</span> <span class="toc-text">移码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81-%E9%87%8D%E7%82%B9-%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">2.1.4.</span> <span class="toc-text">补码(重点):解决整数的存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E5%8D%81%E8%BF%9B%E5%88%B6%E6%B1%82%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.4.1.</span> <span class="toc-text">已知十进制求二进制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B1%82%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.4.1.1.</span> <span class="toc-text">求正整数的二进制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B1%82%E8%B4%9F%E6%95%B4%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.4.1.2.</span> <span class="toc-text">求负整数的二进制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%B6%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.4.1.3.</span> <span class="toc-text">零转二进制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">2.1.4.2.</span> <span class="toc-text">已知二进制转十进制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2-%E6%9C%80%E9%87%8D%E8%A6%81"><span class="toc-number">2.2.</span> <span class="toc-text">进制转换(最重要)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACr%E8%BF%9B%E5%88%B6"><span class="toc-number">2.2.1.</span> <span class="toc-text">十进制转r进制:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B8%BA%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">2.2.2.</span> <span class="toc-text">r进制转为十进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E7%9A%84%E8%BD%AC%E5%8C%96"><span class="toc-number">2.2.3.</span> <span class="toc-text">二进制与十六进制的转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9A%84%E8%BD%AC%E5%8C%96"><span class="toc-number">2.2.4.</span> <span class="toc-text">十六进制与二进制的转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96"><span class="toc-number">2.2.5.</span> <span class="toc-text">二进制与八进制相互转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96"><span class="toc-number">2.2.6.</span> <span class="toc-text">十六进制与八进制相互转化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%85%A8%E9%83%A8%E4%BD%8D%E9%9B%B6%E7%9A%84%E5%90%AB%E4%B9%89-%E2%80%9300000000000000%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">2.3.</span> <span class="toc-text">二进制全部位零的含义 –00000000000000的含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%A4%84%E7%90%86-%E4%BA%86%E8%A7%A3"><span class="toc-number">2.4.</span> <span class="toc-text">字符串的处理(了解)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8-%E8%BF%9E%E7%BB%93C%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E7%9F%A5%E8%AF%86"><span class="toc-number">3.</span> <span class="toc-text">链表:连结C语言和数据结构的知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">4.</span> <span class="toc-text">文件的输入和输出</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">4.1.</span> <span class="toc-text">文件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.2.</span> <span class="toc-text">文件的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%A8%E6%88%B7%E8%A7%82%E7%82%B9"><span class="toc-number">4.2.1.</span> <span class="toc-text">从用户观点:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B"><span class="toc-number">4.2.2.</span> <span class="toc-text">从操作系统的角度看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BB%84%E7%BB%87%E5%BD%A2%E5%BC%8F"><span class="toc-number">4.2.3.</span> <span class="toc-text">按数据的组织形式:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASCII%E6%96%87%E4%BB%B6%E5%92%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">4.2.3.1.</span> <span class="toc-text">ASCII文件和二进制文件的比较:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">C语言对文件的处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%A4%96%E7%9F%A5%E8%AF%86"><span class="toc-number">4.4.</span> <span class="toc-text">课外知识</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD"><span class="toc-number">5.</span> <span class="toc-text">文件的打开与关闭</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%93%E5%BC%80"><span class="toc-number">5.1.</span> <span class="toc-text">文件的打开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">文件的使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F%E6%9C%89%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9%E8%AF%B4%E6%98%8E"><span class="toc-number">5.2.1.</span> <span class="toc-text">对于文件使用方式有以下几点说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%85%B3%E9%97%AD-fclose%E5%87%BD%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">文件的关闭(fclose函数)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99"><span class="toc-number">5.4.</span> <span class="toc-text">文件的读写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E8%AF%BB%E5%86%99%E5%87%BD%E6%95%B0-fgetc%E5%92%8Cfputc"><span class="toc-number">5.4.1.</span> <span class="toc-text">字符读写函数: fgetc和fputc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8Efputc%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%E8%A6%81%E8%AF%B4%E6%98%8E%E5%87%A0%E7%82%B9"><span class="toc-number">5.4.1.1.</span> <span class="toc-text">对于fputc函数的使用要说明几点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fgetc-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">5.4.2.</span> <span class="toc-text">fgetc()函数调用:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fgetc-%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="toc-number">5.4.2.1.</span> <span class="toc-text">fgetc()函数使用说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85-%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E9%A1%BA%E5%BA%8F%E8%AF%BB%E5%85%A5%E5%AD%97%E7%AC%A6%E5%B9%B6%E5%9C%A8%E5%B1%8F%E5%B9%95%E4%B8%8A%E6%98%BE%E7%A4%BA%E5%87%BA%E6%9D%A5"><span class="toc-number">5.4.2.2.</span> <span class="toc-text">补充:从一个文本文件顺序读入字符并在屏幕上显示出来:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85-%E4%BB%8E%E4%B8%80%E4%B8%AA%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%A1%BA%E5%BA%8F%E8%AF%BB%E5%85%A5%E5%AD%97%E7%AC%A6"><span class="toc-number">5.4.2.3.</span> <span class="toc-text">补充:从一个二进制文件顺序读入字符:</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/13/%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F-%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" title="经典指针程序-互换两个数字"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="经典指针程序-互换两个数字"/></a><div class="content"><a class="title" href="/2021/07/13/%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F-%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" title="经典指针程序-互换两个数字">经典指针程序-互换两个数字</a><time datetime="2021-07-13T04:15:06.000Z" title="发表于 2021-07-13 12:15:06">2021-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/" title="C语言学习笔记05-枚举~结局"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言学习笔记05-枚举~结局"/></a><div class="content"><a class="title" href="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/" title="C语言学习笔记05-枚举~结局">C语言学习笔记05-枚举~结局</a><time datetime="2021-07-12T11:29:13.000Z" title="发表于 2021-07-12 19:29:13">2021-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B02-%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E5%BA%8F%E5%88%97/" title="如何看懂程序举例02-斐波拉契序列"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何看懂程序举例02-斐波拉契序列"/></a><div class="content"><a class="title" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B02-%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E5%BA%8F%E5%88%97/" title="如何看懂程序举例02-斐波拉契序列">如何看懂程序举例02-斐波拉契序列</a><time datetime="2021-07-11T14:40:56.000Z" title="发表于 2021-07-11 22:40:56">2021-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B01-%E7%94%A8while%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0/" title="如何看懂程序举例01-用while判断是否是回文数"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何看懂程序举例01-用while判断是否是回文数"/></a><div class="content"><a class="title" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B01-%E7%94%A8while%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0/" title="如何看懂程序举例01-用while判断是否是回文数">如何看懂程序举例01-用while判断是否是回文数</a><time datetime="2021-07-11T13:35:47.000Z" title="发表于 2021-07-11 21:35:47">2021-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004/" title="C语言学习笔记04-结构体"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言学习笔记04-结构体"/></a><div class="content"><a class="title" href="/2021/07/07/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004/" title="C语言学习笔记04-结构体">C语言学习笔记04-结构体</a><time datetime="2021-07-07T09:19:53.000Z" title="发表于 2021-07-07 17:19:53">2021-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 歌悠扬</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'EXeNbCUpujCrhCBBLXmsr5sl-gzGzoHsz',
+      appKey: 'wloYyG1jVSuzDGqkV9cR7hl7',
+      placeholder: '亲爱的旅行者,请留下你的足迹',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+      region: 'ap-shanghai'
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Valine' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+        region: 'ap-shanghai',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><link rel="stylesheet" href="/css/geyouyang.css"><link rel="stylesheet" href="/css/iconfont.css"><script data-pjax src="/js/geyouyang.js"></script><script async src="//at.alicdn.com/t/font_2638808_lwtcv00tzts.js"></script><script defer src="/live2d-widget/autoload.js"></script><script async data-pjax src="/js/randombg.js"></script><div class="aplayer no-destroy" data-id="2162768511" data-server="netease" data-type="playlist" data-mutex="true" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="false" muted></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script><!-- hexo injector body_end end --></body></html>
