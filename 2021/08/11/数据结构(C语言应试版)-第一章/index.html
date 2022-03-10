@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据结构第一章-数据结构和算法 | 歌悠扬的博客</title><meta name="keywords" content="数据结构"><meta name="author" content="歌悠扬,xiegelive@hotmail.com"><meta name="copyright" content="歌悠扬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据结构 数据结构是对客观事物的符号表示,如图形、声音等 数据元素是数据的基本单位 数据项是构成数据元素的不可分割的最小单位.一个数据元素可由若干个数据项组成,例如,一位学生的信息记录为一个数据元素,它是由学号、姓名、性别等数据项组成。 数据对象是具有相同性质的数据元素的集合。 数据结构是相互之间存在一种或多种特定关系的数据元素的集合。数据结构包括三方面的内容：逻辑结构、存储结构和数据的运算数据结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第一章-数据结构和算法">
+<meta property="og:url" content="https://geyouyang.top/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
+<meta property="og:site_name" content="歌悠扬的博客">
+<meta property="og:description" content="数据结构 数据结构是对客观事物的符号表示,如图形、声音等 数据元素是数据的基本单位 数据项是构成数据元素的不可分割的最小单位.一个数据元素可由若干个数据项组成,例如,一位学生的信息记录为一个数据元素,它是由学号、姓名、性别等数据项组成。 数据对象是具有相同性质的数据元素的集合。 数据结构是相互之间存在一种或多种特定关系的数据元素的集合。数据结构包括三方面的内容：逻辑结构、存储结构和数据的运算数据结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg">
+<meta property="article:published_time" content="2021-08-11T11:28:43.000Z">
+<meta property="article:modified_time" content="2022-03-10T15:03:57.629Z">
+<meta property="article:author" content="歌悠扬">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://geyouyang.top/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据结构第一章-数据结构和算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-10 23:03:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-comments faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat faa-tada"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="fa-fw fas fa-music faa-tada"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-fw fas fa-gamepad faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-fw fas fa-video faa-tada"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-heart faa-tada"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">歌悠扬的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-comments faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat faa-tada"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="fa-fw fas fa-music faa-tada"></i><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg><span> 番剧</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="fa-fw fas fa-gamepad faa-tada"></i><span> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><i class="fa-fw fas fa-video faa-tada"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-heart faa-tada"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据结构第一章-数据结构和算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-11T11:28:43.000Z" title="发表于 2021-08-11 19:28:43">2021-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-10T15:03:57.629Z" title="更新于 2022-03-10 23:03:57">2022-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84Java%E5%BA%94%E8%AF%95%E7%89%88/">数据结构Java应试版</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据结构第一章-数据结构和算法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><ol>
+<li>数据结构是对客观事物的符号表示,如图形、声音等</li>
+<li>数据元素是数据的基本单位</li>
+<li>数据项是构成数据元素的不可分割的最小单位.<br>一个数据元素可由若干个数据项组成,例如,一位学生的信息记录为一个数据元素,它是由学号、姓名、性别等数据项组成。</li>
+<li>数据对象是具有相同性质的数据元素的集合。</li>
+<li>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。<br>数据结构包括三方面的内容：逻辑结构、存储结构和数据的运算<br>数据结构的形式定义为：数据结构是一个二元组<br><code>Data_Structure=(D,S)</code><br>其中：D是数据元素的有限集，S是D上（数据）关系的有限集。</li>
+</ol>
+<p>题1.以下说法正确的是（）。<br>A.数据项是数据的基本单位         B.数据元素是数据的最小单位<br>C.数据结构是带结构的数据项的集合  D.数据元素可由若干数据项组成</p>
+<p>解析:A是最小单位 B是基本单位 C是数据元素的集合</p>
+<p>D正确</p>
+<p>题2.数据的逻辑结构从形式上可用二元组(D,R)表示,其中R是()的有限集</p>
+<p>A.算法  B.数据元素  c.数据项    D.数据关系</p>
+<p>解析:D是数据元素的有限集，S是D上（数据）关系的有限集。</p>
+<p>是数据关系的有限集<br>D正确</p>
+<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>逻辑结构是指数据元素之间的逻辑关系,与数据的存储无关,独立于计算机.</p>
+<p>逻辑结构分两种，四类</p>
+<h3 id="线型结构："><a href="#线型结构：" class="headerlink" title="线型结构："></a>线型结构：</h3><p>线性表（一般线性表、栈、队列、串、数组）    一对一关系</p>
+<h3 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h3><p>非线性结构包括：集合、树形结构、图形结构（网状结构） 多对多</p>
+<p><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/shujujiegou/luojijiegou.png"></p>
+<p>题1.以下数据结构中,不是线性结构的是()<br>A.栈    B.队列  C.串.   D.二叉树</p>
+<p>解析:二叉树属于树形结构<br>选D</p>
+<p>题2.根据数据元素之间关系的不同特性,通常由四类基本结构,即:集合、线性结构、树型结构和_____结构。</p>
+<p>解析： 逻辑结构分线性结构和非线性<br>非线性包括：集合、树形结构、图像结构（网状结构）<br>线性结构包括：线性表（一般线性表、栈、队列、串、数组）</p>
+<p>所以填：图形或网状</p>
+<p>选项只有两个空就填 线性 和 非线性 结构。</p>
+<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><ul>
+<li><p>存储结构（物理结构）是指数据结构在计算机中的表示，它包括数据元素的表示和关系的表示。</p>
+</li>
+<li><p>存储结构包括四种：顺序结构，链式结构,索引存储,散列存储</p>
+</li>
+</ul>
+<ul>
+<li>顺序存储:把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中,元素之间的关系由存储单元的邻接关系来实现.</li>
+<li>链式存储:借助指示元素存储地址的指针来表示元素之间的逻辑关系</li>
+<li>索引存储:在存储元素信息的同时,还建立附加的索引表</li>
+<li>散列存储:根据元素的关键字直接计算出该元素的存储地址,又称哈希(hash)存储</li>
+</ul>
+<ul>
+<li>题1.在顺序存储、链式存储、索引存储、和散列存储这4种存储方式中，最基本、最常用的两种存储结构式_______________和________.</li>
+</ul>
+<p>答案：顺序存储，链式存储</p>
+<ul>
+<li>题2.以下与数据的存储结构无关的术语是（）<br>A.有序表    B.链表  C.顺序队列  D.哈希表</li>
+</ul>
+<p>解析:<br>B属于链式存储,C属于顺序存储,D属于散列存储又称哈希存储<br>A:有序表是指逻辑上有序的一个线性表,仅仅描述元素之间的逻辑关系<br>对它进行存储的时候,既可以用顺序存储也可以用链式存储</p>
+<p>答案:A</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
+<li>算法是对待特定问题求解步骤的一种描述,它是指令的有限序列,其中的每条指令表示一个或多个操作.此外,一个算法还具有下列5个重要特性:</li>
+</ul>
+<ol>
+<li>有穷性。一个算法必须总是在执行有穷步后结束，且每一步都是在有穷时间内完成。</li>
+<li>确定性。算法中每条指令必须有确切的含义，且相同的输入只能得到相同的输出。</li>
+<li>可行性。算法中描述的操作都可以通过已经实现的基本运算执行有限次来实现。</li>
+<li>输入。一个算法有零个或多个输入。</li>
+<li>输出。一个算法有一个或多个输出。</li>
+</ol>
+<ul>
+<li>题1.以下不属于算法特性的是（）<br>A.可行性    B.输入  C.确定型    D.健壮性</li>
+</ul>
+<p>解析:健壮性是设计一个”好”的算法的目标之一</p>
+<p>答案:D</p>
+<ul>
+<li>通常设计一个”好”的算法应考虑达到以下目标:</li>
+</ul>
+<ol>
+<li>正确性.算法应能够正确地求解问题.</li>
+<li>可读性.算法能具有良好的可读性,以帮助人们理解.</li>
+<li>健壮性.输入非法数据时,算法能适当地做出反应或进行处理,而不会莫名其妙的输出结果.</li>
+<li>效率与低存储量需求.效率是指算法执行的时间,存储量需求是指算法执行过程中所需最大存储空间</li>
+</ol>
+<ul>
+<li><p>算法效率的度量是通过时间复杂度和空间复杂度来描述的.</p>
+</li>
+<li><p>一个语句的频度是指该语句在算法中被重复执行的次数</p>
+</li>
+<li><p>算法中所有语句的频度之和记为T(n),它是该算法问题规模n的函数,时间复杂度主要分析T(n)的数量级</p>
+</li>
+<li><p>时间复杂度计算(重要考点)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">加法规则:T(n)=T₁(n)+T₂(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))</span><br><span class="line">乘法规则:T(n)=T₁(n)×T₂(n)=O(f(n))×O(g(n))=O(f(n)×g(n))</span><br><span class="line">注意:时间复杂度不考虑常数</span><br><span class="line"></span><br><span class="line">常见的渐进时间复杂度为</span><br><span class="line">O(1)&lt;O(㏒₂n)&lt;O(n)&lt;O(n㏒₂n)&lt;O(n²)&lt;O(n³)&lt;O(2ⁿ)&lt;O(n!)&lt;O(nⁿ)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li>题1.算法分析的目的是()<br>A.找出数据结构的合理性       B.研究算法中的输入和输出<br>C.分析算法的效率以求改进     D.分析算法的易懂性</li>
+</ul>
+<p>答案:C</p>
+<ul>
+<li>题2.若一个算法中的语句频度之和为<code>T(n)=n+4n㏒₂n</code>,则该算法的时间复杂度为_______________.</li>
+</ul>
+<p>解析:<br>第一步:加法规则,保留之间最大的那个,<em>n+4n㏒₂n</em> 先不动<br>第二步:乘法规则:n的数量级就是n,时间复杂度不考虑常数,4去掉,剩下n㏒₂n<br>第三步:<br>根据常见的渐进时间复杂度为<br><code>O(1)&lt;O(㏒₂n)&lt;O(n)&lt;O(n㏒₂n)&lt;O(n²)&lt;O(n³)&lt;O(2ⁿ)&lt;O(n!)&lt;O(nⁿ)</code><br>可得:<code>O(n)&lt;O(n㏒₂n)</code><br>所以把n去掉,所以答案就是<em>O(n㏒₂n)</em></p>
+<p>答案:<br><code>O(n㏒₂n)</code></p>
+<ul>
+<li>注意:做时间复杂度的题型时,不要忘记写O</li>
+</ul>
+<ul>
+<li>题3.下面两段程序的时间复杂度是()<br>(1)                         <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(i=2;i&lt;n;++i)</span><br><span class="line">    ++x;</span><br><span class="line">    for(j=1;j&lt;=i-1;++j)</span><br><span class="line">        a[i][j]=x;</span><br><span class="line"></span><br><span class="line">(2)i=1;</span><br><span class="line">    while(i&lt;=n)</span><br><span class="line">        i=i*2;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>A.O(n²),O(log₂n)    B.O(n²),O(n²)<br>C.O(n),O(n)         D.O(n),O(log₂n)</p>
+<p>解析:</p>
+<ul>
+<li>做时间复杂度程序题时:只需看基本运算,基本运算就是指执行频度最高的那个语句</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">(1)</span><br><span class="line">a[i][j]=x; 语句执行频度最高,只计算它的频度就可以了</span><br><span class="line"></span><br><span class="line">for(i=2;i&lt;n;++i)  //i从2到n,一共执行了n-1次</span><br><span class="line">for(j=1;j&lt;=i-1;++j) //由上条语句可知i=2,带入循环,j&lt;=1</span><br><span class="line">j&lt;=1,所以j只能为1</span><br><span class="line">所以a[i][j]=x; 只执行了一次</span><br><span class="line">然后++i,i=3</span><br><span class="line">j&lt;=2,所以j可以是1和2</span><br><span class="line">所以a[i][j]=x; 只执行了两次</span><br><span class="line">n-1 i=2 j=1</span><br><span class="line">    i=3 j=1,2</span><br><span class="line">    ...</span><br><span class="line">    i=2 j=1,2,....,n-1</span><br><span class="line"></span><br><span class="line">求频度只需要把j的取值加起来就可以了</span><br><span class="line">需用到数学公式:【（首+尾）*项数】/2</span><br><span class="line">1+2+3+....n-1=(1+n-1)(n-1)/2=n(n-1)/2</span><br><span class="line">求时间复杂度忽略常数,把1/2去掉,变n(n-1),加法规则保留最大值</span><br><span class="line">所以(1)时间复杂度是O(n²)</span><br><span class="line"></span><br><span class="line">(2)</span><br><span class="line">(2)i=1;</span><br><span class="line">    while(i&lt;=n)</span><br><span class="line">        i=i*2;</span><br><span class="line"></span><br><span class="line">i=i*2; 是基本运算</span><br><span class="line">可以设n=50</span><br><span class="line">i=1 i&lt;=50</span><br><span class="line">i=2 i&lt;=50</span><br><span class="line">i=4 i&lt;=50</span><br><span class="line"></span><br><span class="line">由规律可知2ⁿ规律</span><br><span class="line">设执行次数为t,又因为i&lt;=n</span><br><span class="line">2^t&lt;=n</span><br><span class="line">t&lt;=log₂n    //数学公式:a^x=b x=loga(b)</span><br><span class="line"></span><br><span class="line">所以时间复杂度:为O(log₂n)</span><br><span class="line"></span><br><span class="line">所以答案:</span><br><span class="line">A</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xiegelive@hotmail.com">歌悠扬</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://geyouyang.top/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/">https://geyouyang.top/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://geyouyang.top" target="_blank">歌悠扬的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/07/16/(C%E8%AF%95%E9%A2%98)%E9%83%9D%E6%96%8CC%E8%AF%AD%E8%A8%80%E6%B5%8B%E8%AF%95%E9%A2%98/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover06.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Twikoo</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">歌悠扬</div><div class="author-info__description">只有一种失败叫中途放弃</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/jiaqq.jpg"><i></i><span>Contact me</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/geyouyang" target="_blank" title="Github"><i class="fa-fw fab fa-github faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:xiegelive@hotmail.com" target="_blank" title="Email"><i class="fa-fw fas fa-envelope faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/101706302" target="_blank" title="Bilibili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">ACG兼技术向的个人博客,欢迎各位!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">逻辑结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E5%9E%8B%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">线型结构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">非线性结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">算法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="数据结构第一章-数据结构和算法"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构第一章-数据结构和算法"/></a><div class="content"><a class="title" href="/2021/08/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(C%E8%AF%AD%E8%A8%80%E5%BA%94%E8%AF%95%E7%89%88)-%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="数据结构第一章-数据结构和算法">数据结构第一章-数据结构和算法</a><time datetime="2021-08-11T11:28:43.000Z" title="发表于 2021-08-11 19:28:43">2021-08-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/16/(C%E8%AF%95%E9%A2%98)%E9%83%9D%E6%96%8CC%E8%AF%AD%E8%A8%80%E6%B5%8B%E8%AF%95%E9%A2%98/" title="(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover06.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)"/></a><div class="content"><a class="title" href="/2021/07/16/(C%E8%AF%95%E9%A2%98)%E9%83%9D%E6%96%8CC%E8%AF%AD%E8%A8%80%E6%B5%8B%E8%AF%95%E9%A2%98/" title="(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)">(C练习)求1到某个数字之间(包括该数字)所有的素数,并将其输出(单函数方法)</a><time datetime="2021-07-16T12:54:32.000Z" title="发表于 2021-07-16 20:54:32">2021-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/13/%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F-%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" title="经典指针程序-互换两个数字"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="经典指针程序-互换两个数字"/></a><div class="content"><a class="title" href="/2021/07/13/%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F-%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" title="经典指针程序-互换两个数字">经典指针程序-互换两个数字</a><time datetime="2021-07-13T04:15:06.000Z" title="发表于 2021-07-13 12:15:06">2021-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/" title="C语言学习笔记05-枚举~结局"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言学习笔记05-枚举~结局"/></a><div class="content"><a class="title" href="/2021/07/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/" title="C语言学习笔记05-枚举~结局">C语言学习笔记05-枚举~结局</a><time datetime="2021-07-12T11:29:13.000Z" title="发表于 2021-07-12 19:29:13">2021-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B02-%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E5%BA%8F%E5%88%97/" title="如何看懂程序举例02-斐波拉契序列"><img src="https://cdn.jsdelivr.net/gh/geyouyang/Tuchuang/Article-cover03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何看懂程序举例02-斐波拉契序列"/></a><div class="content"><a class="title" href="/2021/07/11/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F%E4%B8%BE%E4%BE%8B02-%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E5%BA%8F%E5%88%97/" title="如何看懂程序举例02-斐波拉契序列">如何看懂程序举例02-斐波拉契序列</a><time datetime="2021-07-11T14:40:56.000Z" title="发表于 2021-07-11 22:40:56">2021-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 歌悠扬</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'EXeNbCUpujCrhCBBLXmsr5sl-gzGzoHsz',
+      appKey: 'wloYyG1jVSuzDGqkV9cR7hl7',
+      placeholder: '亲爱的旅行者,请留下你的足迹',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+      region: 'ap-shanghai'
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Valine' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'hello-cloudbase-6gw3ginb7e19ca5b',
+        region: 'ap-shanghai',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><link rel="stylesheet" href="/css/geyouyang.css"><link rel="stylesheet" href="/css/iconfont.css"><script data-pjax src="/js/geyouyang.js"></script><script async src="//at.alicdn.com/t/font_2638808_lwtcv00tzts.js"></script><script defer src="/live2d-widget/autoload.js"></script><script async data-pjax src="/js/randombg.js"></script><div class="aplayer no-destroy" data-id="2162768511" data-server="netease" data-type="playlist" data-mutex="true" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="false" muted></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script><!-- hexo injector body_end end --></body></html>
